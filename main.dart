@@ -1,8 +1,27 @@
 void main() {
-  print(binhPhuong(3));
-  print(binhPhuong('abc'));
-  ageOK(22);
+  getCircleInfo(5);
+  print('==============');
+  getCircleInfo(-5);
 }
+
+void getCircleInfo(double r) {
+  late double chuVi;
+  late double dienTich;
+  const double PI = 3.141516;
+  if (r <= 0) {
+    print('NO CIRCLE');
+  } else {
+    chuVi = 2 * PI * r;
+    dienTich = r * PI * r;
+    print('chu vi la ${chuVi.toStringAsFixed(2)}');
+    print('dien tich la ${dienTich.toStringAsFixed(2)}');
+  }
+}
+
+//cách khai báo kiểu dữ liệu có thể null
+//học toán tử
+//học hàm (cơ bản)
+//học qua if-else
 
 void ageOK(int age) {
   if (age >= 18) {
