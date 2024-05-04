@@ -7,7 +7,9 @@ void main() {
 void getCircleInfo(double r) {
   late double chuVi;
   late double dienTich;
+
   const double PI = 3.141516;
+
   if (r <= 0) {
     print('NO CIRCLE');
   } else {
@@ -73,3 +75,12 @@ void justPrint(String name, int age) {
 int getAge() {
   return 3 * 2;
 }
+
+///BTVN
+///EXE1:
+// 1.viết hàm trả ra tên của một người
+// 2.nâng cấp hàm đó trả thêm địa chỉ ở của người đó
+
+///Exe2: sử dụng những gì đã học
+//viết hết tất cả các code demo về toán tử của dart và ý nghĩa của chúng
+//buổi sau mình sẽ hỏi lại
