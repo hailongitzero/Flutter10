@@ -159,6 +159,11 @@ void demoNullSafety() {
   int length3 = ((variableCanNull ?? '').length ?? 0).bitLength!;
   int length4 = variableCanNull!.length!.bitLength!;
   print(true);
-
   print(length2);
 }
+
+///Btvn
+///Viết một hàm trả về thông tin ngày hôm đó (.....) và mặc định đang là năm 2024 (use default para), tháng phải là enum
+///-> Thứ ... - ngày ... - năm và có || (không phải) năm nhuận
+
+///Viết hàm kiểm tra số chẵn hay lẻ (input: dynamic param) -> hợp lệ || Có || Không
