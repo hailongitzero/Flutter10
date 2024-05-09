@@ -154,12 +154,7 @@ void demoNullSafety() {
   String? variableCanNull;
   String varCanNotNull = '';
 
-  int length1 = varCanNotNull.length;
-  int length2 = (variableCanNull ?? 'abc').length;
-  int length3 = ((variableCanNull ?? '').length ?? 0).bitLength!;
-  int length4 = variableCanNull!.length!.bitLength!;
   print(true);
-  print(length2);
 }
 
 ///Btvn
@@ -167,3 +162,4 @@ void demoNullSafety() {
 ///-> Thứ ... - ngày ... - năm và có || (không phải) năm nhuận
 
 ///Viết hàm kiểm tra số chẵn hay lẻ (input: dynamic param) -> hợp lệ || Có || Không
+///
