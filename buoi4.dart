@@ -120,3 +120,16 @@ class AnotherStudent {
 ///tên, tuổi, địa chỉ
 ///phương thức: trả ra tuổi của người đó -> 18, thông tin người đó in ra các thông tin
 ///viết hàm trả ra những người trên 20 tuổi
+
+///BTVN
+//1. Viết hàm kiểm tra một danh sách kiểu số nguyên để lưu trữ số CMND/CCCD nếu danh sách chứa số
+// trùng nhau sẽ sai vì cmnd/cccd chỉ có một
+
+//3. Viết hàm để trả ra String nhưng chỉ toàn viết hoa (input: hnMs -> HNMS) // tìm cách biến
+// chuỗi thành chuỗi in hoa cần tìm ở bên ngoài google
+
+//2.Tạo Đối Tượng Bàn bao gồm các thuộc tính: nơi sản xuất, chất liệu, giá thành, id bàn(chỉ số
+//1. id này để phân biệt các bàn với nhau riêng biệt giống cmnd)
+//2. Viết phương thức trả ra thông tin của bàn
+//3. Viết phương thức để kiểm tra 2 tham số đầu vào là 2 đối tượng bàn khác nhau in ra bàn có giá
+// tiền cao hơn
