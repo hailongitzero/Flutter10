@@ -16,7 +16,9 @@
 ///typeDef
 void main() {
   // demoSwitchCase();
-  demoTryCatch();
+  // demoTryCatch();
+  Student long = Student("long", 22, 'd683dc05-a9ce-4654-8a73-adaa1a67df38');
+  print(long);
 }
 
 /// switch-case
@@ -76,3 +78,45 @@ void demoTryCatch() {
     print("finally");
   }
 }
+
+/// Đối tượng (object)
+/// in dart everything is object
+
+//class TenDoiDuong {
+// int tuoi;
+// String name; => thuộc tính
+// constructor: khởi tạo cho đối tượng
+// void nameFunc() { => phương thức
+// }
+//}
+
+class Student {
+  String name; //thuoc tinh
+  String id;
+  int age;
+
+  ///Constructor
+  Student(this.name, this.age, this.id);
+
+  @override
+  String toString() {
+    return 'Student ne: {name: $name, id: $id, age: $age}';
+  } //this được hiểu là chính đối tượng bọc bên ngoài this
+
+  void hocBai() {
+    print('studying');
+  }
+}
+
+class AnotherStudent {
+  String? email;
+  String hobby;
+
+  // AnotherStudent(this.email, this.hobby);
+  AnotherStudent(this.email, {required this.hobby});
+}
+
+///tạo đối tượng người
+///tên, tuổi, địa chỉ
+///phương thức: trả ra tuổi của người đó -> 18, thông tin người đó in ra các thông tin
+///viết hàm trả ra những người trên 20 tuổi
