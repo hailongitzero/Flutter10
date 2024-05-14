@@ -18,7 +18,12 @@ void main() {
   // demoSwitchCase();
   // demoTryCatch();
   Student long = Student("long", 22, 'd683dc05-a9ce-4654-8a73-adaa1a67df38');
-  print(long);
+  print(long.toString());
+  Ban banGo = Ban('VN', 'Go', 1000, '201');
+  Ban banNhua = Ban('CHI', 'Nhua', 500, '202');
+  banGo.kiemTraBanLonHon(banGo, banNhua);
+  List<int> testData = [1, 2, 2, 3, 4];
+  print(checkListDuplicateData(testData));
 }
 
 /// switch-case
@@ -125,11 +130,50 @@ class AnotherStudent {
 //1. Viết hàm kiểm tra một danh sách kiểu số nguyên để lưu trữ số CMND/CCCD nếu danh sách chứa số
 // trùng nhau sẽ sai vì cmnd/cccd chỉ có một
 
-//3. Viết hàm để trả ra String nhưng chỉ toàn viết hoa (input: hnMs -> HNMS) // tìm cách biến
-// chuỗi thành chuỗi in hoa cần tìm ở bên ngoài google
+// [5,4,3,2,1];
+
+bool checkListDuplicateData(List<int> input) {
+  bool result = true;
+  for (int index = 0; index < input.length; index++) {
+    for (int indexAnother = index + 1; indexAnother < input.length; indexAnother++) {
+      if (input[index] == input[indexAnother]) {
+        result = false;
+        break;
+      }
+    }
+  }
+  return result;
+}
 
 //2.Tạo Đối Tượng Bàn bao gồm các thuộc tính: nơi sản xuất, chất liệu, giá thành, id bàn(chỉ số
 //1. id này để phân biệt các bàn với nhau riêng biệt giống cmnd)
 //2. Viết phương thức trả ra thông tin của bàn
 //3. Viết phương thức để kiểm tra 2 tham số đầu vào là 2 đối tượng bàn khác nhau in ra bàn có giá
 // tiền cao hơn
+
+class Ban {
+  String noiSanXuat;
+  String chatLieu;
+  double giaThanh;
+  String id;
+
+  Ban(this.noiSanXuat, this.chatLieu, this.giaThanh, this.id);
+
+  void kiemTraBanLonHon(Ban banThuNhat, Ban banThuHai) {
+    if (banThuNhat.giaThanh > banThuHai.giaThanh) {
+      print('$banThuNhat nhiều tiền hơn $banThuHai');
+    } else if (banThuNhat.giaThanh < banThuHai.giaThanh) {
+      print('$banThuNhat ít tiền hơn $banThuHai');
+    } else {
+      print('$banThuNhat bằng tiền hơn $banThuHai');
+    }
+  }
+
+  @override
+  String toString() {
+    return 'Ban :$id chatLieu: $chatLieu';
+  }
+}
+
+//3. Viết hàm để trả ra String nhưng chỉ toàn viết hoa (input: hnMs -> HNMS) // tìm cách biến
+// chuỗi thành chuỗi in hoa cần tìm ở bên ngoài google

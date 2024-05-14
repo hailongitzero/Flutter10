@@ -6,6 +6,20 @@
 // break and continue
 void main() {
   List<int> intList = [3, 4, 1, 2, 7, 10]; // length 6
+  // indexInArray : 0,1,2,3
+  int firstNum = intList[0];
+
+  // for(;;) {
+  //   print('h');
+  // }
+  // for (int index = 0; index < intList.length; index++) {
+  //   int indexForUser = index + 1;
+  //   int currentValue = intList[index];
+  //   print('number at index $indexForUser is : $currentValue');
+  // }
+
+  // demoDoWhileFtWhile(intList);
+  exercise();
   // demoForInLoop(intList);
 
   List<List<int>> anArray2D = [
@@ -26,7 +40,7 @@ void main() {
 ///for(giá_trị_khởi_tạo_cho_biến_điều_kiện ; điều_kiện_để_kết_thúc_vòng_lặp ;
 ///bước_nhảy_cho_biến_điều_kiện) {} /// =>
 // List<int> intList = [3, 4, 1, 2];
-//indexInArray : 0,1,2,3
+// indexInArray : 0,1,2,3
 // int firstNum = intList[0];
 // for (int index = 0; index < intList.length; index++) {
 // int indexForUser = index + 1;
@@ -58,26 +72,25 @@ void demoDoWhileFtWhile(List<int> intList) {
 
   while (indexForWhile < intList.length) {
     // index++;
-    int indexCurrent = indexForWhile + 1;
-    print('number at index $indexCurrent is : ${intList[indexForWhile]}');
-    indexForWhile++;
+    // int indexCurrent = indexForWhile + 1;
+    // print('number at index $indexCurrent is : ${intList[indexForWhile]}');
+    // indexForWhile++;
   }
 
   do {
     int indexCurrent = indexForDoWhile + 1;
     print('number at index $indexCurrent is : ${intList[indexForDoWhile]}');
     indexForDoWhile++;
-  } while (indexForDoWhile < intList.length);
+  } while (0 < 1);
 }
 
 ///in ra tu 1 -> 100
 void exercise() {
-  int sum = 0;
   for (int i = 1; i <= 100; i++) {
-    if (i >= 90) break;
-    if (i % 2 == 0) {
-      sum += i;
-    }
+    if (i == 90) continue;
+    print(i);
+    // if (i % 2 == 0) {
+    //   print(i);
+    // }
   }
-  print(sum);
 }
