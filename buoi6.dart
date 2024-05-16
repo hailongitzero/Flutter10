@@ -34,9 +34,10 @@ void main() {
 
   ///Demo class ManagePeople
   ManagePeople managePeople = ManagePeople(peopleInput);
-  managePeople.getResultNumbersByTypePeople();
-  managePeople.getResultNumbersByTypePeopleAnotherWay(managePeople.people);
-  managePeople.getResultNumbersByTypePeopleAnotherWay(peopleInput);
+  managePeople.getResultNumbersByTypePeopleExtension();
+  // managePeople.getResultNumbersByTypePeople();
+  // managePeople.getResultNumbersByTypePeopleAnotherWay(managePeople.people);
+  // managePeople.getResultNumbersByTypePeopleAnotherWay(peopleInput);
 }
 
 enum TypePeople {
@@ -63,6 +64,8 @@ class People {
   set id(String value) {
     _id = value;
   }
+
+  bool checkAgeIsEven() => (this.age % 2 == 0) ? true : false;
 
   People peopleFullInfo() {
     if (this.age < 18) {
@@ -156,10 +159,32 @@ class ManagePeople {
         totalKid++;
         //for count kidNumber
       }
-
       index++;
     }
 
     print("người lớn : $totalAdult, trẻ em: $totalKid, người già: $totalOld");
+  }
+}
+
+///BONUS
+extension ManagePeopleExtension on ManagePeople {
+  void getResultNumbersByTypePeopleExtension() {
+    int totalKid = 0;
+    int totalAdult = 0;
+    int totalOld = 0;
+    int lengthLoop = this.people.length;
+    for (int index = 0; index < lengthLoop; index++) {
+      final People currentHuman = this.people[index];
+      if (currentHuman.typePeople == TypePeople.TheOld) {
+        totalOld++;
+      } else if (currentHuman.typePeople == TypePeople.Adult) {
+        totalAdult++;
+      } else {
+        totalKid++;
+        //for count kidNumber
+      }
+    }
+
+    print("extension người lớn : $totalAdult, trẻ em: $totalKid, người già: $totalOld");
   }
 }
