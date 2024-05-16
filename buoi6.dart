@@ -1,3 +1,5 @@
+import 'dart:math';
+
 ///I.
 ///Tạo một đối tượng Người
 ///Trong đó có các kiểu thuộc tính
@@ -14,8 +16,8 @@ void main() {
   People people1 = People('123', 'nguyen van kid13', 13);
   People people2 = People('132', 'nguyen van adult20', 20);
   People people3 = People('213', 'nguyen van adult55', 55);
-  People people4 = People('231', 'nguyen van old20', 89);
-  People people5 = People('321', 'nguyen van kid3', 3);
+  People people4 = People('231', 'nguyen van old89', 89, typePeople: TypePeople.TheOld);
+  People people5 = People('321', 'nguyen van kid3', 3, typePeople: TypePeople.Kid);
   print(people1.typePeople);
   people1.peopleFullInfo();
   print(people1.typePeople);
@@ -25,6 +27,16 @@ void main() {
   print('people3 before convert ${people3.typePeople}');
   people3 = people3.peopleFullInfoAnotherWay2(people3);
   print('people3 after convert ${people3.typePeople}');
+
+  List<People> peopleInput = [];
+  peopleInput.addAll([people1, people2, people3, people4, people5]);
+  print('size ${peopleInput.length}');
+
+  ///Demo class ManagePeople
+  ManagePeople managePeople = ManagePeople(peopleInput);
+  managePeople.getResultNumbersByTypePeople();
+  managePeople.getResultNumbersByTypePeopleAnotherWay(managePeople.people);
+  managePeople.getResultNumbersByTypePeopleAnotherWay(peopleInput);
 }
 
 enum TypePeople {
@@ -107,4 +119,47 @@ class ManagePeople {
   List<People> people;
 
   ManagePeople(this.people);
+
+  void getResultNumbersByTypePeople() {
+    int totalKid = 0;
+    int totalAdult = 0;
+    int totalOld = 0;
+    int lengthLoop = this.people.length;
+    for (int index = 0; index < lengthLoop; index++) {
+      final People currentHuman = this.people[index];
+      if (currentHuman.typePeople == TypePeople.TheOld) {
+        totalOld++;
+      } else if (currentHuman.typePeople == TypePeople.Adult) {
+        totalAdult++;
+      } else {
+        totalKid++;
+        //for count kidNumber
+      }
+    }
+
+    print("người lớn : $totalAdult, trẻ em: $totalKid, người già: $totalOld");
+  }
+
+  void getResultNumbersByTypePeopleAnotherWay(List<People> peopleValue) {
+    int totalKid = 0;
+    int totalAdult = 0;
+    int totalOld = 0;
+    int lengthLoop = peopleValue.length;
+    int index = 0;
+    while (index < lengthLoop) {
+      final People currentHuman = this.people[index];
+      if (currentHuman.typePeople == TypePeople.TheOld) {
+        totalOld++;
+      } else if (currentHuman.typePeople == TypePeople.Adult) {
+        totalAdult++;
+      } else {
+        totalKid++;
+        //for count kidNumber
+      }
+
+      index++;
+    }
+
+    print("người lớn : $totalAdult, trẻ em: $totalKid, người già: $totalOld");
+  }
 }
