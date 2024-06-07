@@ -38,6 +38,10 @@ void main() {
   // managePeople.getResultNumbersByTypePeople();
   // managePeople.getResultNumbersByTypePeopleAnotherWay(managePeople.people);
   // managePeople.getResultNumbersByTypePeopleAnotherWay(peopleInput);
+
+  List<String> words = ["abc", "ab", "a"];
+  print("test");
+  print(words.where((e) => e.contains("b")).toList());
 }
 
 enum TypePeople {
