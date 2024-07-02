@@ -20,8 +20,10 @@ void main() {
   //       "hello hallo",
   //   "this is great thanks very much",
   // ]));
-  print(exe3([1, 2, 3, 4]));
-  print(countZeroMax([0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 2, 0]));
+  // print(exe3([1, 2, 3, 4]));
+  // print(countZeroMax([0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 2, 0]));
+
+  print(checkIsReversedString('abacb', 'caba'));
 }
 
 int exe2(List<String> inputSentences) {
@@ -141,4 +143,27 @@ int countZeroMax(List<int> input) {
   }
 
   return countResult;
+}
+
+bool checkIsReversedString(String s, String t) {
+  final List<String> tmpA = s.split('');
+  final List<String> tmpB = t.split('');
+  //abaca
+  // i = 3
+  //acab
+  // j = 0
+  // i = 4
+  // j = -1
+  if (s.length == t.length) {
+    for (int i = 0, j = (tmpB.length - 1); i <= (tmpA.length) && j >= 0; i++, j--) {
+      if (tmpA[i] != tmpB[j]) {
+        print(tmpA[i]);
+        print(tmpB[j]);
+        return false;
+      }
+    }
+    return true;
+  } else {
+    return false;
+  }
 }
